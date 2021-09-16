@@ -1,12 +1,14 @@
+<% ROOT = '.'; %>
+<%- include(ROOT + '/_const') -%>
 <!doctype html>
 <html>
-<head>
-<%- include('base/_head', {main: data.main}); %>
-</head>
-<body>
-    <p>テスト</p>
-<%- include('block/_header', {header: data.header}); %>
-<%- include('block/_main', {main: data.main, inner: data.inner}); %>
-<%- include('block/_footer', {footer: data.footer}); %>
+<%- include(ROOT + '/block/_head') -%>
+<% BodyClass = 'top'; %>
+<body class="<%= BodyClass %>">
+    <%- include(ROOT + '/block/_header') -%>
+
+    <%- include(ROOT + '/pages/top/_main') -%>
+
+    <%- include(ROOT + '/block/_footer') -%>
 </body>
 </html>

@@ -2,12 +2,12 @@ const gulp = require('gulp');
 const rename = require('gulp-rename');
 const ejs = require('gulp-ejs');
 const fs = require('fs');
-const replace = require('gulp-replace'); 
+const replace = require('gulp-replace');
 const sass = require('gulp-sass');
 const webpackStream = require('webpack-stream');
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config');
-const browserSync = require('browser-sync'); 
+const browserSync = require('browser-sync');
 const plumber = require('gulp-plumber');
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
@@ -21,7 +21,7 @@ const srcDataJson = './src/json/data.json';
 const srcEjsFiles = './src/ejs/**/*.ejs';
 const srcEjsPartial = '!./src/ejs/**/_*.ejs';
 const srcScssFiles = './src/scss/**/*.scss';
-const srcTsFiles = './src/ts/**/*.ts';
+// const srcTsFiles = './src/ts/**/*.ts';
 const srcImgFiles = './src/img/**/*'
 const srcImgFileType = '{jpg,jpeg,png,gif,svg}';
 
@@ -43,12 +43,12 @@ const destImgFiles = './dest/img/*';
 const compileEjs = (done) => {
     const data = JSON.parse(fs.readFileSync(srcDataJson));
     gulp.src([srcEjsFiles, srcEjsPartial])
-      .pipe(plumber())
-      .pipe(ejs(data))
-      .pipe(ejs({}, {}, { ext: '.html' }))
-      .pipe(rename({ extname: '.html' }))
-      .pipe(replace(/^[ \t]*\n/gmi, ''))
-      .pipe(gulp.dest(destDir));
+        .pipe(plumber())
+        .pipe(ejs(data))
+        .pipe(ejs({}, {}, { ext: '.html' }))
+        .pipe(rename({ extname: '.html' }))
+        .pipe(replace(/^[ \t]*\n/gmi, ''))
+        .pipe(gulp.dest(destDir));
     done();
 };
 
@@ -69,7 +69,7 @@ const compileSass = (done) => {
 // TypeScriptをwebpackでバンドル
 const bundleWebpack = (done) => {
     webpackStream(webpackConfig, webpack)
-      .pipe(gulp.dest(destJsDir));
+        .pipe(gulp.dest(destJsDir));
     done();
 };
 
@@ -148,7 +148,7 @@ const watchFiles = (done) => {
     gulp.watch(destHtmlFiles, reloadBrowser);
     gulp.watch(srcScssFiles, compileSass);
     gulp.watch(destCssFiles, reloadBrowser);
-    gulp.watch([srcTsFiles, srcJsonFiles], bundleWebpack);
+    // gulp.watch([srcTsFiles, srcJsonFiles], bundleWebpack);
     gulp.watch(destJSFiles, reloadBrowser);
     gulp.watch(srcImgFiles, gulp.series(imgClean, minifyImage));
     gulp.watch(destImgFiles, reloadBrowser);

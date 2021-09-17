@@ -16,8 +16,8 @@ const del = require('del');
 
 
 // ファイルパス：コンパイル前
-const srcJsonFiles = './src/json/**/*.json';
-const srcDataJson = './src/json/data.json';
+// const srcJsonFiles = './src/json/**/*.json';
+// const srcDataJson = './src/json/data.json';
 const srcEjsFiles = './src/ejs/**/*.ejs';
 const srcEjsPartial = '!./src/ejs/**/_*.ejs';
 const srcScssFiles = './src/scss/**/*.scss';
@@ -41,10 +41,10 @@ const destImgFiles = './dest/img/*';
 
 // EJSコンパイル
 const compileEjs = (done) => {
-    const data = JSON.parse(fs.readFileSync(srcDataJson));
+    // const data = JSON.parse(fs.readFileSync(srcDataJson));
     gulp.src([srcEjsFiles, srcEjsPartial])
         .pipe(plumber())
-        .pipe(ejs(data))
+        // .pipe(ejs(data))
         .pipe(ejs({}, {}, { ext: '.html' }))
         .pipe(rename({ extname: '.html' }))
         .pipe(replace(/^[ \t]*\n/gmi, ''))
@@ -144,7 +144,7 @@ exports.imgClean = imgClean;
 
 // 監視ファイル
 const watchFiles = (done) => {
-    gulp.watch([srcEjsFiles, srcJsonFiles], gulp.series(htmlClean, compileEjs));
+    // gulp.watch([srcEjsFiles, srcJsonFiles], gulp.series(htmlClean, compileEjs));
     gulp.watch(destHtmlFiles, reloadBrowser);
     gulp.watch(srcScssFiles, compileSass);
     gulp.watch(destCssFiles, reloadBrowser);

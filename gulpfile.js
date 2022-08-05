@@ -23,6 +23,8 @@ const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 //ブラウザリロード
 const browserSync = require("browser-sync");
+//ベンダープレフィックス自動付与
+const autoprefixer = require('gulp-autoprefixer');
 
 // 入出力するフォルダを指定
 const srcBase = "./src";
@@ -44,6 +46,13 @@ const docsPath = {
     ejs: docsBase + "/",
 };
 
+//ベンダープレフィックスを付与する条件
+const TARGET_BROWSERS = [
+    'last 2 versions',//各ブラウザの2世代前までのバージョンを担保
+    'ie >= 11'//IE11を担保
+];
+
+
 /**
  * sass
  */
@@ -60,6 +69,7 @@ const cssSass = () => {
                 })
             )
             .pipe(sass({ outputStyle: "expanded" })) //指定できるキー expanded compressed
+            .pipe(autoprefixer(TARGET_BROWSERS))// ベンダープレフィックス自動付与
             .pipe(
                 purgecss({
                     content: [

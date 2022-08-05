@@ -22,7 +22,6 @@ npm install
 ##### 開発
 ```
 npx gulp
-http://localhost:3000/
 ```
 
 ### 参考

@@ -1,7 +1,13 @@
+@use "../foundation/system" as s;
+
 .c-top {
     margin: 0;
-    padding: 0;
+    padding: 1em;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include s.breakpoint(tablet) {
+        margin: 1em;
+    }
+    @include s.breakpoint(pc) {
+        margin: 2em;
+    }
 }

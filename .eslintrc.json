@@ -1,19 +1,25 @@
 {
     "env": {
         "browser": true, //ブラウザでメジャーなもの（documentなど）を許可
-        "es6": true //ES6の書き方許可
+        "es6": true, //ES6の書き方許可
+        "jquery" : true
     },
     "extends": [
         "eslint:recommended", //ESLintおすすめルールの読み込み
-        "prettier" //Prettier適用
+        "prettier", //Prettier適用
+        "airbnb"
     ],
     //個別ルール
     "rules": {
         "no-extra-semi": "warn", //セミコロンがないと警告
+        "no-unused-vars": "off",
         "quotes": [
             //シングルクオートを使っていないと警告
             "warn"
             // ,"single"
         ]
+    },
+    "parserOptions": {
+        "sourceType": "module"
     }
 }

@@ -1,1 +1,2 @@
-window.onload=function(){console.log("Test")};
+$("body").addClass("open");
+console.log("TestTesttest");

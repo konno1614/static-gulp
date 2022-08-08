@@ -5,9 +5,9 @@
     padding: 1em;
     display: flex;
     @include s.breakpoint(tablet) {
-        margin: 1em;
+        background-color: red;
     }
-    @include s.breakpoint(pc) {
-        margin: 2em;
+    @include s.breakpoint(sp) {
+        background-color: blue;
     }
 }

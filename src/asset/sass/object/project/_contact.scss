@@ -5,6 +5,6 @@
 .p-contact {
     @include s.breakpoint(tablet) {
     }
-    @include s.breakpoint(pc) {
+    @include s.breakpoint(sp) {
     }
 }

@@ -18,7 +18,7 @@ $c-body-black: $c-black;
 
 // transition
 // ---------------------
-@mixin transition-base($second: 0.4s) {
+@mixin transition-base($second: 0.3s) {
     transition: all $second;
 }
 
@@ -43,12 +43,12 @@ $c-body-black: $c-black;
 // ---------------------
 @mixin breakpoint($point) {
     @if $point == tablet {
-        @media (min-width: 640px) {
+        @media (max-width: 1024px) {
             @content;
         }
     }
-    @if $point == pc {
-        @media (min-width: 890px) {
+    @if $point == sp {
+        @media (max-width: 599px) {
             @content;
         }
     }

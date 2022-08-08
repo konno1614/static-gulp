@@ -66,6 +66,6 @@
     @include s.breakpoint(tablet) {
         width: 80%;
     }
-    @include s.breakpoint(pc) {
+    @include s.breakpoint(sp) {
     }
 }

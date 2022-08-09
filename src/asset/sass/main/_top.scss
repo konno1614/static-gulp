@@ -1,9 +1,7 @@
 @use "../foundation/system" as s;
 
 .c-top {
-    margin: 0;
-    padding: 1em;
-    display: flex;
+    background-color: s.$c-white;
     @include s.breakpoint(tablet) {
         background-color: red;
     }

@@ -40,8 +40,9 @@ object {
     border: none;
 }
 a {
-    color: #1ca9e3;
+    color: s.$c-primary;
     text-decoration: underline;
+    // カーソルは乗っているがクリックはされていない状態
     &:hover {
         text-decoration: none;
         img {
@@ -49,6 +50,15 @@ a {
             opacity: 0.8;
             @include s.transition-base();
         }
+    }
+    // クリックされてから離されるまでの状態
+    &:active {
+    }
+    // 未訪問リンク
+    &:link {
+    }
+    // 訪問済みリンク
+    &:visited {
     }
 }
 a,

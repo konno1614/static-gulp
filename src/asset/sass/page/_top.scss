@@ -10,4 +10,7 @@
     @include s.breakpoint(sp) {
         background-color: blue;
     }
+    p {
+        @include s.garamond();
+    }
 }

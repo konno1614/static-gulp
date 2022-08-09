@@ -1,1 +1,3 @@
-$('body').addClass('open');
+$(function() {
+    console.log("Nav");
+});

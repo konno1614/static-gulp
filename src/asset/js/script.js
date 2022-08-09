@@ -1,1 +1,3 @@
-console.log("TestTesttest");
+$(function() {
+    console.log("Script");
+});

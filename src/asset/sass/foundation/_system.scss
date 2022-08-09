@@ -30,10 +30,10 @@ $c-body-black: $c-black;
 
 // font system
 // ---------------------
-// @mixin garamond($weight: bold) {
-//     font-family: "Cormorant Garamond", serif;
-//     font-weight: $weight;
-// }
+@mixin garamond($weight: bold) {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: $weight;
+}
 
 // Google Font Awesome
 // ---------------------
@@ -59,7 +59,7 @@ $c-body-black: $c-black;
 }
 @include breakpoint(tablet) {
 }
-@include breakpoint(pc) {
+@include breakpoint(sp) {
     .pc-only {
         display: inline-block;
     }

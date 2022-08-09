@@ -1,2 +1,2 @@
-$("body").addClass("open");
-console.log("TestTesttest");
+$(function(){console.log("Nav")});
+$(function(){console.log("Script")});

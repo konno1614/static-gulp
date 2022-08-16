@@ -67,3 +67,6 @@ input,
 button {
     @include s.transition-base();
 }
+ul {
+    list-style: none;
+}

@@ -1,0 +1,10 @@
+@use "../foundation/system" as s;
+@use "../object/mixin" as m;
+
+.o-title {
+    text-align: center;
+    @include s.breakpoint(tablet) {
+    }
+    @include s.breakpoint(sp) {
+    }
+}

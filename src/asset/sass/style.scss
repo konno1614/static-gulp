@@ -11,31 +11,19 @@
 @use "./layout/header";
 @use "./layout/footer";
 
-/*-------------------
- * page
- *-------------------*/
-@use "./page/top";
-
 /*--------------------------------------*
  * object
  *--------------------------------------*/
+@use "./object/mixin";
+@use "./object/section";
+@use "./object/inner";
+@use "./object/title";
 /*-------------------
- * component
- -------------------*/
-@use "./object/component/loading";
-@use "./object/component/section";
-@use "./object/component/table";
-@use "./object/component/lists";
-@use "./object/component/details";
-@use "./object/component/form";
-@use "./object/component/cta";
+ * main
+ *-------------------*/
+@use "./main/top";
 
 /*-------------------
- * project
- -------------------*/
-@use "./object/project/contact";
-
-/*-------------------
- * object
- -------------------*/
-@use "./object/utility/display";
+ * sample
+ *-------------------*/
+// @use "./sample/sample";

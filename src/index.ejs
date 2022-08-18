@@ -1,14 +1,20 @@
-<%_ const path='./'; _%>
+<%_ const path='.'; _%>
 <!DOCTYPE html>
 <html lang="ja">
     <head>
         <%- include('./_common/_head', { path:path,meta:data.meta['home'],})%>
     </head>
-    <body class="c-top">
+    <body>
         <%- include('./_common/_header',{path:path,}) %>
 
-        <main>
-            Main
+        <main class="c-top">
+            <h1>main</h1>
+            <section class="o-section">
+                <div class="o-inner">
+                    <h2 class="o-title">Title</h2>
+                    <a href="<%= path %>/about/">About</a>
+                </div>
+            </section>
         </main>
 
         <%- include('./_common/_footer',{path:path,}) %>

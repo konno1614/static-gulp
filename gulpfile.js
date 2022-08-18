@@ -23,6 +23,10 @@ const plumber = require("gulp-plumber");
 const notify = require("gulp-notify");
 //ブラウザリロード
 const browserSync = require("browser-sync");
+//ベンダープレフィックス自動付与
+const autoprefixer = require('gulp-autoprefixer');
+//JavaScriptファイルをまとめる
+const concat = require('gulp-concat');
 
 // 入出力するフォルダを指定
 const srcBase = "./src";
@@ -44,6 +48,12 @@ const docsPath = {
     ejs: docsBase + "/",
 };
 
+//ベンダープレフィックスを付与する条件
+const TARGET_BROWSERS = [
+    'last 2 versions',//各ブラウザの2世代前までのバージョンを担保
+    'ie >= 11'//IE11を担保
+];
+
 /**
  * sass
  */
@@ -60,6 +70,7 @@ const cssSass = () => {
                 })
             )
             .pipe(sass({ outputStyle: "expanded" })) //指定できるキー expanded compressed
+            .pipe(autoprefixer(TARGET_BROWSERS))// ベンダープレフィックス自動付与
             .pipe(
                 purgecss({
                     content: [
@@ -95,8 +106,9 @@ const js = () => {
             })
         )
         .pipe(uglify())
+        .pipe(concat('script.js'))
         .pipe(gulp.dest(docsPath.js))
-        .pipe(browserSync.stream());
+        .pipe(browserSync.stream())
 };
 
 /**
@@ -139,7 +151,7 @@ const ejsHtml = () => {
         .pipe(plumber())
         .pipe(ejs(json, { ext: ".html" }))
         .pipe(rename({ extname: ".html" }))
-        .pipe(prettier())
+        .pipe(prettier({ singleQuote: true }))
         .pipe(gulp.dest(docsPath.ejs));
 };
 

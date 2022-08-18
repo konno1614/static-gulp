@@ -4,21 +4,13 @@
 // color system
 // ---------------------
 $c-white: #fff;
-$c-lightGray: #efefef;
 $c-black: #333;
 
 $c-primary: #ca6060;
 
-$c-base-white: $c-white;
-$c-base-lightGray: $c-lightGray;
-$c-base-black: $c-black;
-
-$c-body-white: $c-white;
-$c-body-black: $c-black;
-
 // transition
 // ---------------------
-@mixin transition-base($second: 0.4s) {
+@mixin transition-base($second: 0.3s) {
     transition: all $second;
 }
 
@@ -30,10 +22,52 @@ $c-body-black: $c-black;
 
 // font system
 // ---------------------
-// @mixin garamond($weight: bold) {
-//     font-family: "Cormorant Garamond", serif;
-//     font-weight: $weight;
-// }
+@mixin garamond($weight: bold) {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: $weight;
+}
+
+// font-weight system
+// ---------------------
+@mixin f_nomal($weight: normal) {
+    font-weight: $weight;
+}
+@mixin f_lighter($weight: lighter) {
+    font-weight: $weight;
+}
+@mixin f_bold($weight: bold) {
+    font-weight: $weight;
+}
+@mixin f_bolder($weight: bolder) {
+    font-weight: $weight;
+}
+@mixin f100($weight: 100) {
+    font-weight: $weight;
+}
+@mixin f200($weight: 200) {
+    font-weight: $weight;
+}
+@mixin f300($weight: 300) {
+    font-weight: $weight;
+}
+@mixin f400($weight: 400) {
+    font-weight: $weight;
+}
+@mixin f500($weight: 500) {
+    font-weight: $weight;
+}
+@mixin f600($weight: 600) {
+    font-weight: $weight;
+}
+@mixin f700($weight: 700) {
+    font-weight: $weight;
+}
+@mixin f800($weight: 800) {
+    font-weight: $weight;
+}
+@mixin f900($weight: 900) {
+    font-weight: $weight;
+}
 
 // Google Font Awesome
 // ---------------------
@@ -43,12 +77,12 @@ $c-body-black: $c-black;
 // ---------------------
 @mixin breakpoint($point) {
     @if $point == tablet {
-        @media (min-width: 640px) {
+        @media (max-width: 1024px) {
             @content;
         }
     }
-    @if $point == pc {
-        @media (min-width: 890px) {
+    @if $point == sp {
+        @media (max-width: 599px) {
             @content;
         }
     }
@@ -59,7 +93,7 @@ $c-body-black: $c-black;
 }
 @include breakpoint(tablet) {
 }
-@include breakpoint(pc) {
+@include breakpoint(sp) {
     .pc-only {
         display: inline-block;
     }

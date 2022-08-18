@@ -8,11 +8,11 @@
 
 // 変数の記述
 .sample {
-    color: s.$c-base-white;
-    background-color: s.$c-base-black;
+    color: s.$c-white;
+    background-color: s.$c-black;
     border: solid 2px s.$c-primary;
     &:hover {
-        background-color: rgba($color: s.$c-body-black, $alpha: 0.3);
+        background-color: rgba($color: s.$c-black, $alpha: 0.3);
     }
     // mixinの記述
     @include s.garamond();

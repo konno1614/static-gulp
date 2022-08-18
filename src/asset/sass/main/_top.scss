@@ -1,14 +1,9 @@
 @use "../foundation/system" as s;
+@use "../object/mixin" as m;
 
 .c-top {
-    background-color: s.$c-white;
     @include s.breakpoint(tablet) {
-        background-color: red;
     }
     @include s.breakpoint(sp) {
-        background-color: blue;
-    }
-    p {
-        @include s.garamond();
     }
 }

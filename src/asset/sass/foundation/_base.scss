@@ -19,16 +19,16 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    color: s.$c-body-black;
-    background-color: s.$c-base-white;
+    color: s.$c-black;
+    background-color: s.$c-white;
     font-size: 1.6rem;
     font-family: YuGothic, "Yu Gothic", "Helvetica Neue", Arial,"Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
     font-weight: 500;
     overflow-x: hidden;
 }
 ::selection {
-    background-color: rgba($color: s.$c-base-black, $alpha: 0.7);
-    color: s.$c-body-white;
+    background-color: rgba($color: s.$c-black, $alpha: 0.7);
+    color: s.$c-white;
 }
 
 img,

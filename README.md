@@ -1,4 +1,4 @@
-# ejs-template
+# static-gulp
 
 ## 開発
 
@@ -31,9 +31,7 @@ npx gulp
 ```
 
 ### 参考
-
 https://zenn.dev/yurukei20/articles/f1f9b248fcf18b
 
 ### GitHub Pages
-
 https://konno1614.github.io/ejs-template/public/

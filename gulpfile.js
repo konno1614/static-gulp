@@ -33,17 +33,17 @@ const srcBase = "./src";
 const docsBase = "./public";
 
 const srcPath = {
-    scss: srcBase + "/asset/sass/**/*.scss",
-    js: srcBase + "/asset/js/*.js",
-    img: srcBase + "/asset/img/**",
+    scss: srcBase + "/assets/sass/**/*.scss",
+    js: srcBase + "/assets/js/*.js",
+    img: srcBase + "/assets/img/**",
     html: srcBase + "/**/*.html",
     ejs: [srcBase + "/**/*.ejs", "!" + srcBase + "/**/_*.ejs"],
 };
 
 const docsPath = {
-    css: docsBase + "/asset/css/",
-    js: docsBase + "/asset/js/",
-    img: docsBase + "/asset/img/",
+    css: docsBase + "/assets/css/",
+    js: docsBase + "/assets/js/",
+    img: docsBase + "/assets/img/",
     html: docsBase + "/",
     ejs: docsBase + "/",
 };

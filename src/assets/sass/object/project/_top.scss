@@ -1,7 +1,7 @@
-@use "../foundation/system" as s;
+@use "../../foundation/system" as s;
+@use "../../foundation/mixin" as m;
 
-.o-title {
-    text-align: center;
+.p-top {
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {

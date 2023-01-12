@@ -1,6 +1,7 @@
 /* base
 --------------------------- */
 @use "./system" as s;
+@use "./mixin" as m;
 
 *,
 *:before,
@@ -22,9 +23,13 @@ body {
     color: s.$c-black;
     background-color: s.$c-white;
     font-size: 1.6rem;
-    font-family: YuGothic, "Yu Gothic", "Helvetica Neue", Arial,"Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-    font-weight: 500;
+    @include s.notosansjp();
+    @include s.font_regular();
     overflow-x: hidden;
+    &.is-open {
+        overflow: hidden;
+        touch-action: none;
+    }
 }
 ::selection {
     background-color: rgba($color: s.$c-black, $alpha: 0.7);

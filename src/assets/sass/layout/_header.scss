@@ -1,7 +1,7 @@
 @use "../foundation/system" as s;
-@use "../object/mixin" as m;
+@use "../foundation/mixin" as m;
 
-.c-top {
+.l-header {
     @include s.breakpoint(tablet) {
     }
     @include s.breakpoint(sp) {
